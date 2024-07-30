@@ -4,9 +4,9 @@ import java.util.HashMap;
 
 public class Rubrica {
 
-    private HashMap<String, Integer> rubrica = new HashMap<>();
+    private final HashMap<String, String> rubrica = new HashMap<>();
 
-    public void newContact(String nome, int numero) {
+    public void newContact(String nome, String numero) {
         this.rubrica.put(nome, numero);
 
     }
@@ -15,9 +15,26 @@ public class Rubrica {
         this.rubrica.remove(nome);
     }
 
-    public void findContact(int numero) {
-        
+    public void findContactByNumber(String numero) {
+        String result = "";
+        for (String name : this.rubrica.keySet()) {
+            if (numero.equals(rubrica.get(name))) {
+                result = name;
+            }
+        }
+        System.out.println(result);
 
+    }
+
+    public void findContactByName(String name) {
+        System.out.println(this.rubrica.get(name));
+
+    }
+
+    public void printAllContacts() {
+        for (String nome : this.rubrica.keySet()) {
+            System.out.println("Nome " + nome + " - " + " numero " + this.rubrica.get(nome));
+        }
     }
 
     @Override
