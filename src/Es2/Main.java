@@ -11,8 +11,7 @@ public class Main {
 
         System.out.println(func1(6));
         System.out.println(func2(func1(6)));
-        System.out.println(func3(func1(6), false));
-
+        System.out.println(func3(func1(6), true));
 
     }
 
@@ -46,9 +45,8 @@ public class Main {
             for (int i = 0; i < list.size(); i++) {
                 if (i % 2 != 0) newList.add(list.get(i));
             }
-
         }
-      
+
         return newList;
     }
 
